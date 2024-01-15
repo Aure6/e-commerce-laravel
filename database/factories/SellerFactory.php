@@ -17,7 +17,8 @@ class SellerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            // 'user_id' => User::get()->random()->id,
+            'company_name' => fake()->company(),
         ];
     }
 }

@@ -26,8 +26,17 @@ class Product extends Model
     {
         return $this->belongsTo(Seller::class);
     }
-    public function inventory(): BelongsTo
+    public function stock(): BelongsTo
     {
-        return $this->belongsTo(Inventory::class);
+        return $this->belongsTo(Stock::class);
+    }
+
+    public static function getProductsByCategory($cat)
+    {
+        return self::where('category_id', $cat)->get();
+    }
+
+    public static function getProductsByName(string $name)
+    {
     }
 }
