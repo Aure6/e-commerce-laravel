@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sellers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('company_name');
         });
     }
